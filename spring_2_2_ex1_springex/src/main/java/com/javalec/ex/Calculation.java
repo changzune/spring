@@ -43,7 +43,7 @@ public class Calculation {
 
 	public void setSecondNum(int secondNum) {
 		this.secondNum = secondNum;
-		//
+		////
 	}
 	
 	
