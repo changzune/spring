@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
-<<<<<<< HEAD
 	<pluginVersion><![CDATA[3.6.3.201411271034-RELEASE]]></pluginVersion>
 	<configSuffixes>
 		<configSuffix><![CDATA[xml]]></configSuffix>
@@ -9,14 +8,6 @@
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>src/main/resources/applicationCTX.xml</config>
-=======
-	<pluginVersion><![CDATA[3.9.21.202203211437-RELEASE]]></pluginVersion>
-	<configSuffixes>
-		<configSuffix><![CDATA[xml]]></configSuffix>
-	</configSuffixes>
-	<enableImports><![CDATA[false]]></enableImports>
-	<configs>
->>>>>>> refs/remotes/origin/master
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
