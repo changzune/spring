@@ -19,15 +19,11 @@ public class ApplicationConfig {
 		student.setAge(10);
 		student.setHobbys(hobbys);
 		
-		
-		
-		return null;
+		return student;
 	}
 	
 	@Bean
-	public Student Student2() {
-		
-		
+	public Student student2(){		
 		ArrayList<String> hobbys = new ArrayList<String>();
 		hobbys.add("독서");
 		hobbys.add("음악감상");
@@ -36,9 +32,7 @@ public class ApplicationConfig {
 		student.setAge(5);
 		student.setHobbys(hobbys);
 		
-		
-		
-		return null;
+		return student;
 		
 	}
 	
