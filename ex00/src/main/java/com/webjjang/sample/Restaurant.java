@@ -15,7 +15,7 @@ import lombok.Setter;
 public class Restaurant {
 	
 	//자동 DI를 적용시키는 어노테이션
-	//@Inject - java, @AutoWirde - Spring, @Setter-Lombok
+	//@Inject - java, @AutoWirde - Spring, @Setter - Lombok
 	
 	@Setter(onMethod_ = @Autowired)
 	private Chef chef;
