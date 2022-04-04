@@ -24,7 +24,7 @@
 	<!-- url과 상관있는 객체
 		base-package로 설정된 위치의 아래를 찾아보기를 한다. -->
 	 
-	<context:component-scan base-package="com.webjjang.myapp" />
+	<context:component-scan base-package="com.webjjang" />
 	
 	
 	
