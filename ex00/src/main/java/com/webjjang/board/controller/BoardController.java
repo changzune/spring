@@ -28,7 +28,7 @@ public class BoardController {
 	}
 
 	// 게시판 글보기
-	@GetMapping("/list.do")
+	@GetMapping("/view.do")
 	public String view() {
 		log.info(" ---게시판 글보기 ----");
 		// /WEB-INF/views +board + / + view + .jsp

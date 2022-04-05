@@ -7,7 +7,10 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- @Service, @Repository, @Componnet-자동 생성하기 위해 찾는 DI를 지정한다.
-	위치와 아래위치를 다찾아서 생성해 준다. -->
+	위치와 아래위치를 다찾아서 생성해 준다. 
+	
+	<context:component-scan base-package="com.webjjang"></context:component-scan>
+	-->
 
-		<context:component-scan base-package="com.webjjang"></context:component-scan>
+		
 </beans>
