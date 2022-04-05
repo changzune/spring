@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webjjang.board.vo.BoardVO;
 
@@ -70,9 +71,12 @@ public class BoardController {
 
 	// 게시판 글쓰기 처리
 	@PostMapping("/write.do")
-	public String wirte(BoardVO vo) {
+	public String wirte(BoardVO vo, RedirectAttributes rttr) {
 		log.info(" ---게시판 글쓰기 처리 ----");
 		log.info(vo);
+		
+		// 딱한번만 사용되는 데이터 저장
+		rttr.addFlashAttribute("msg","게시판 글등록이 되었습니다.");
 		// 게시판 리스트로 보낸다.
 		return "redirect:list.do";
 	}
@@ -102,6 +106,8 @@ public class BoardController {
 	}
 	
 	//게시판 글 삭제 폼 - 여러개의 글번호가 넘오어는 경우
+	//@ModelAttrbute("no") - 데이터를 그대로 담아서 jsp 까지 전달해준다. 배열로 받을 때는 사용하면 안된다.
+	// no 변수 한개로 받을 때는 여러개의 no를 넘겨도 오류는 나지 않지만 맨앞에 있는 데이터만 받는다. 나머지는 무시된다.
 	@GetMapping("/deleteArray.do")
 	public String delectArrayForm() {
 		log.info(" ---게시판 글삭제 ----");
@@ -110,13 +116,13 @@ public class BoardController {
 	}
 
 	@PostMapping("/deleteArray.do")
-	public String delectArray(@RequestParam(name="no") Long[] no, Model model ) {
+	public String delectArray(@RequestParam(name="no") Long[] nos, Model model ) {
 		log.info(" ---게시판 글삭제 처리 여러개의 데이터 ----");
 		//실제적으로 삭제 할 때 2가지 방법
 		//1.for문을 이용해서 service에서 삭제 매서드를 여러번 호출
 		//2.delete board where no in(삭제들 번호들);
-		log.info(Arrays.toString(no));
-		model.addAttribute("no",no);
+		log.info(Arrays.toString(nos));
+		model.addAttribute("no",nos);
 		//글 리스트로 자동 이동
 		return MODULE + "/" + "deleteArray";
 	}

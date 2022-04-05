@@ -9,9 +9,9 @@
 </head>
 <body>
 <!-- 이것은 삭제된 게시글의 가져오는것 -->
+${nos }<br>
+<c:forEach items="${nos }" var="no">
 ${no }<br>
-<c:forEach items="${no }" var="n">
-${n }<br>
 
 </c:forEach>
 
