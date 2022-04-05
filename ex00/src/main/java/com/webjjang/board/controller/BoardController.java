@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import lombok.extern.log4j.Log4j;
 
@@ -22,9 +23,9 @@ public class BoardController {
 	// 게시판 리스트
 	@GetMapping("/list.do")
 	public String list() {
-		log.info(" ---게시판 리스트 ----");
-		// /WEB-INF/views +board + / + list + .jsp
-		return "MODULE" + "/" + "list";
+		log.info("---게시판 리스트 -------------------------");
+		// /WEB-INF/views + board + / + list + .jsp
+		return MODULE + "/" + "list";
 	}
 
 	// 게시판 글보기
@@ -32,7 +33,7 @@ public class BoardController {
 	public String view() {
 		log.info(" ---게시판 글보기 ----");
 		// /WEB-INF/views +board + / + view + .jsp
-		return "MODULE" + "/" + "view";
+		return MODULE + "/" + "view";
 	}
 
 	// 게시판 글쓰기 폼
@@ -40,7 +41,7 @@ public class BoardController {
 	public String writeForm() {
 		log.info(" ---게시판 글쓰기 폼 ----");
 		// /WEB-INF/views +board + / + write + .jsp
-		return "MODULE" + "/" + "write";
+		return MODULE + "/" + "write";
 	}
 
 	// 게시판 글쓰기 처리
@@ -56,7 +57,7 @@ public class BoardController {
 	public String updateForm() {
 		log.info(" ---게시판 글수정 폼 ----");
 		// /WEB-INF/views +board + / + update + .jsp
-		return "MODULE" + "/" + "update";
+		return MODULE + "/" + "update";
 	}
 
 	// 게시판 글 수정 처리

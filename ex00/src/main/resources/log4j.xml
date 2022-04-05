@@ -11,11 +11,11 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.webjjang.myapp">
+	<logger name="com.webjjang">
 		<level value="info" />
 	</logger>
 	
-	<logger name="com.webjjang.">
+	<logger name="com.webjjang">
 		<level value="info" />
 	</logger>
 	

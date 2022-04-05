@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>게시판 리스트</h3>
-<a href="view.do">열심히 하겠습니다.</a><br>
-<a href="write.do"><button>글쓰기</button></a>
+<h3>게시판 수정 폼</h3>
+<form action="update.do" method="post">
+<button>수정</button>
 
+
+</form>
 
 </body>
 </html>
