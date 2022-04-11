@@ -24,7 +24,16 @@
 	destroy-method="close">
 	<constructor-arg ref="hikariConfig" />
 	</bean>
+	
 
+	
+	<!-- MyBatis-Spring : MyBatis와 Spring을 연결해 주는 객체 : dataSource에서 con을 가져오는 것으로 만들어야 한다. 객체 생성 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- property : setter를 이용한 DI 적용 -->
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	
 	<context:component-scan
 		base-package="org.zerock.sample"></context:component-scan>
 		

@@ -4,6 +4,7 @@ import java.sql.Connection;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,7 +42,18 @@ public class DataSourceTests {
 		
 	}
 	
-
+	@Test
+	public void testConnection2() {
+		
+		try(SqlSession session = sessionFactory.openSession()){
+			
+			log.info(session);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 }

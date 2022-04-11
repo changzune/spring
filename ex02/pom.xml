@@ -133,7 +133,7 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.4.6</version>
+			<version>3.5.6</version>
 		</dependency>
 		
 		<!-- MyBatis Spring 라이브러니 : MyBatis와 Spring 연결 -->
@@ -144,6 +144,7 @@
 		</dependency>
 		
 		<!-- Spring Transaction 처리를 위한 라이브러리 -->
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
