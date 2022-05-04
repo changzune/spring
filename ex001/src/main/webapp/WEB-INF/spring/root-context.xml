@@ -32,7 +32,9 @@
 	<mybatis-spring:scan base-package="org.zerock"/>
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- @Controller, @Service, @Repository, @Component, @RestController - 자동생성하지 위해서 찾는 위치를 지정한다. 위치와 아래 위치를 다 찾아서 생성과 DI를 해준다. -->
+	<!--  @Service, @Repository, @Component, @RestController - 자동생성하지 위해서 찾는 위치를 지정한다. 
+	위치와 아래 위치를 다 찾아서 생성과 DI를 해준다. -->
 	<!-- URL과 상관이 없는 객체 -->
+	<!-- base-package로 설정된 위치를 아래 찾아보기를 한다. -->
 	<context:component-scan base-package="org.zerock"></context:component-scan>
 </beans>
