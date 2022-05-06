@@ -30,7 +30,7 @@ public class BoardController {
 	}
 	
 	//게시판 글보기
-	@GetMapping("/list.do")
+	@GetMapping("/view.do")
 	public String view() {
 		log.info("----[게시판 글보기]-------------------------");
 		// WEB_INF/views + board + / + view + .jsp
@@ -68,7 +68,7 @@ public class BoardController {
 		log.info("----[게시판 글수정 처리]-------------------------");
 		// WEB_INF/views + board + / + list + .jsp
 		// 글보기로 자동으롱 ㅣ동
-		return "response:viwe.do";
+		return "redirect:viwe.do";
 	}
 	
 	//게시판 글 삭제

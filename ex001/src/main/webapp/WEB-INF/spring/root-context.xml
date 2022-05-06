@@ -36,5 +36,5 @@
 	위치와 아래 위치를 다 찾아서 생성과 DI를 해준다. -->
 	<!-- URL과 상관이 없는 객체 -->
 	<!-- base-package로 설정된 위치를 아래 찾아보기를 한다. -->
-	<context:component-scan base-package="org.zerock"></context:component-scan>
+	<!-- <context:component-scan base-package="org.zerock"></context:component-scan> -->
 </beans>
