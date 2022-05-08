@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.zerock.board.vo.BoardVO;
 
 import lombok.extern.log4j.Log4j;
 import oracle.jdbc.proxy.annotation.Post;
@@ -31,8 +32,11 @@ public class BoardController {
 	
 	//게시판 글보기
 	@GetMapping("/view.do")
-	public String view() {
+	//글번호가 필요하다. request에서 꺼내는 방식이(예전), 지금은 spring의 dispacherServlet이
+	//자동으로 매칭되는 것을 꺼내서 전달해준다.
+	public String view(Long no) {
 		log.info("----[게시판 글보기]-------------------------");
+		log.info(no);
 		// WEB_INF/views + board + / + view + .jsp
 		return Module + "/" + "view";
 	}
@@ -47,7 +51,7 @@ public class BoardController {
 	
 	//게시판 글쓰기 처리
 	@PostMapping("/write.do")
-	public String write() {
+	public String write(BoardVO vo) {
 		log.info("----[게시판 글쓰기 처리]-------------------------");
 		// WEB_INF/views + board + / + list + .jsp
 		// 게시판 리스트로 보낸다.
