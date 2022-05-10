@@ -13,7 +13,6 @@ public class BoardVO {
 	private String writer;
 	private Date writeDate;
 	private Long hit;
-	
-	
+
 	
 }

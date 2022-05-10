@@ -8,6 +8,11 @@
 </head>
 <body>
 <h3>게시판 글보기</h3>
+글번호: ${vo.no } <br>
+제목: ${requestScope.vo.title }<br>
+내용: ${vo.content }<br>
+작성자: ${vo.writer }<br>
+
 <a href="update.do">글 수정</a>
 <form action = "delete.do" method="post">
 <button>글삭제</button>

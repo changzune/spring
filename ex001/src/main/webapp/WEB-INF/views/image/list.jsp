@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>이미지 게시판 리스트 입니다.</h3>
+<a href="write">등록</a>
 
 </body>
 </html>
