@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>게시판 글보기</h3>
+페이지 : ${page }
 글번호: ${vo.no } <br>
 제목: ${requestScope.vo.title }<br>
 내용: ${vo.content }<br>

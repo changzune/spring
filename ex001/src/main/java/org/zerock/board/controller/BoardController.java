@@ -3,6 +3,7 @@ package org.zerock.board.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,7 +42,7 @@ public class BoardController {
 	// 그런데 기본형 타입인 long 경우 - String 데이터를 받아서 Long.parseLong(String) Number 타입이 아니고 null을 저장할 수없어서
 	// 없어서 오류가 난다. -> 꼭필요한 데이터는 오류를 내고 오류처리를 해주세요.
 	
-	public String view(long no, @RequestParam(defaultValue = "0",name = "inc") int inc, Model model) {
+	public String view(long no, @RequestParam(defaultValue = "0") int inc, @ModelAttribute Long page, Model model) {
 		log.info("----[게시판 글보기]-------------------------");
 		log.info("글번호 :" + no + ", 증가 : " + inc );
 		
