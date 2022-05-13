@@ -51,6 +51,7 @@ public class BoardController {
 		vo.setTitle("test");
 		vo.setContent("test test");
 		vo.setWriter("lee");
+		vo.setWriter("lee");
 		
 		//jsp까지 전달하기 위해서 model에 데이터는 저장해 놓는다.
 		model.addAttribute("vo", vo);
