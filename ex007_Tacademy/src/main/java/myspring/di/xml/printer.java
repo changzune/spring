@@ -1,6 +1,6 @@
 package myspring.di.xml;
 
 public interface printer {
-	public void print(String massage);
+	public void print(String message);
 
 }
