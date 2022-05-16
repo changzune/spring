@@ -1,6 +1,6 @@
 package myspring.di.xml;
 
-public class StringPrinter implements printer {
+public class StringPrinter implements Printer {
 	
 	private StringBuffer buffer = new StringBuffer();
 	

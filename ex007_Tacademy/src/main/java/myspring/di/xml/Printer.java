@@ -1,6 +1,6 @@
 package myspring.di.xml;
 
-public interface printer {
+public interface Printer {
 	public void print(String message);
 
 }

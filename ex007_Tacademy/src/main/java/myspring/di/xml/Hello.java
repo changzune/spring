@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Hello {
 	private String name;
-	private printer printer;
+	private Printer printer;
 	private List<String> names;
 	
 	public Hello() {
@@ -21,7 +21,7 @@ public class Hello {
 	}
 
 
-	public Hello(String name, myspring.di.xml.printer printer) {
+	public Hello(String name, myspring.di.xml.Printer printer) {
 		super();
 		this.name = name;
 		this.printer = printer;
@@ -31,7 +31,7 @@ public class Hello {
 		this.name = name;
 	}
 	
-	public void setPrinter(printer printer) {
+	public void setPrinter(Printer printer) {
 		this.printer = printer;
 	}
 	

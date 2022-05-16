@@ -1,6 +1,6 @@
 package myspring.di.xml;
 
-public class ConsolePrinter implements printer {
+public class ConsolePrinter implements Printer {
 
 	@Override
 	public void print(String message) {

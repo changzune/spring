@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.junit.Assert.*;
 
 import myspring.di.annot.Hello;
-
+import myspring.di.xml.Printer;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:config/annot.xml")
@@ -25,6 +25,7 @@ public class HelloBeanAnnotTest {
 	
 		hello.print();
 
-	
+		Printer printer = context.getBean("stringPrinter", Printer.class);
+		assertEquals("Hello Spring", printer.toString());
 	}
 }

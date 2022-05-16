@@ -5,7 +5,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.format.Printer;
 
 import myspring.di.xml.Hello;
-import myspring.di.xml.printer;
+
 
 public class HelloBeanTest {
 
@@ -18,7 +18,7 @@ public class HelloBeanTest {
 		hello.print();
 		//3.StringPriter Bean 가져오기
 	
-		printer printer = context.getBean("printer",printer.class);
+		Printer printer = context.getBean("Printer",Printer.class);
 		System.out.println(printer.toString());
 		
 	}
