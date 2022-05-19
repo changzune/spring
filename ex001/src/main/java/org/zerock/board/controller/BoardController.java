@@ -97,8 +97,8 @@ public class BoardController {
 	}
 	
 	//게시판 글 삭제
-	@PostMapping("/deleteArray.do")
-	public String deleteArrayForm() {
+	@GetMapping("/delete.do")
+	public String deleteArray() {
 		log.info("----[게시판 글 삭제]-------------------------");
 		// 글 리스토로 자동이동
 		return "redirect:list.do";
@@ -107,14 +107,29 @@ public class BoardController {
 	//게시판 글 삭제 - 여러개의 글번호가 넘어오는 경우
 	//(@ModelAttribute("no") - 데이터를 그대로 담아서 JSP까지 전달해준다.
 	// no 변수 한개로 받을 때는 여러개의 no를 넘겨도 오류는 나지 않지만 맨앞에 있는 데이터만 받는다. 나머진 무시된다.
-	@GetMapping("/delete.do")
-	public String deleteArray(@ModelAttribute("no") Long[] no) {
+	@GetMapping("/deleteArray.do")
+	public String deleteArrayForm() {
 		log.info("----[게시판 글삭제 폼 - 어러개 ]-------------------------");
-		log.info(Arrays.toString(no));
 		// 글 리스토로 자동이동
 		return  Module + "/" + "deleteArrayForm";
 	}
 
+	
+	//게시판 글 삭제 - 여러개의 글번호가 넘어오는 경우
+	//(@ModelAttribute("no") - 데이터를 그대로 담아서 JSP까지 전달해준다.
+	// no 변수 한개로 받을 때는 여러개의 no를 넘겨도 오류는 나지 않지만 맨앞에 있는 데이터만 받는다. 나머진 무시된다.
+	@PostMapping("/deleteArray.do")
+	public String deleteArray(@RequestParam(name="no") Long[] nos, Model model) {
+		log.info("----[게시판 글삭제 처리 - 어려개의 데ㅔ이터 ]-------------------------");
+		log.info(Arrays.toString(nos));
+		//실제적으로 삭제를 할 때 2가지 방법
+		//1.자바의 for문을 이용해서 사용하면 된다. service에서 삭제 매서드를 여러번 호출 하면 된다.
+		//2.delete board where no in(삭제할 번호들); -DB에서 해결 한다.
+		model.addAttribute("no",nos);
+		// 글 리스토로 자동이동
+		return  Module + "/" + "deleteArray";
+	}
+	
 	
 
 }
