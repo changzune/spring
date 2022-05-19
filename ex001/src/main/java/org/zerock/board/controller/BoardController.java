@@ -1,5 +1,7 @@
 package org.zerock.board.controller;
 
+import java.util.Arrays;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,7 +47,7 @@ public class BoardController {
 	public String view(long no, @RequestParam(defaultValue = "0") int inc, @ModelAttribute("page") Long page, Model model) {
 		log.info("----[게시판 글보기]-------------------------");
 		log.info("글번호 :" + no + ", 증가 : " + inc );
-		
+		page = 11L;
 		BoardVO vo = new BoardVO();
 		vo.setNo(10L);
 		vo.setTitle("test");
@@ -95,13 +97,23 @@ public class BoardController {
 	}
 	
 	//게시판 글 삭제
-	@PostMapping("/delete.do")
-	public String delete() {
+	@PostMapping("/deleteArray.do")
+	public String deleteArrayForm() {
 		log.info("----[게시판 글 삭제]-------------------------");
 		// 글 리스토로 자동이동
 		return "redirect:list.do";
 	}
 	
+	//게시판 글 삭제 - 여러개의 글번호가 넘어오는 경우
+	//(@ModelAttribute("no") - 데이터를 그대로 담아서 JSP까지 전달해준다.
+	// no 변수 한개로 받을 때는 여러개의 no를 넘겨도 오류는 나지 않지만 맨앞에 있는 데이터만 받는다. 나머진 무시된다.
+	@GetMapping("/delete.do")
+	public String deleteArray(@ModelAttribute("no") Long[] no) {
+		log.info("----[게시판 글삭제 폼 - 어러개 ]-------------------------");
+		log.info(Arrays.toString(no));
+		// 글 리스토로 자동이동
+		return  Module + "/" + "deleteArrayForm";
+	}
 
 	
 
